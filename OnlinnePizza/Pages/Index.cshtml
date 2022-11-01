@@ -8,7 +8,17 @@
     <h1 class="display-4">Pizza Shop  </h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-@foreach (var pizza in Model.Pizzas)
-{
-  <h2> @pizza.Pizza_name </h2>  
-}
+
+<div class="row">
+  
+    @foreach (var pizza  in Model.Pizzas)
+         {
+       <div id="PizzaContainer"  class="col-lg-3 col-md-4 col-sm-12" >
+          <img id="img-margin"    src="@pizza.Pizza_image" alt="@pizza.Pizza_name"/>
+          <span id="pizzatitle">@pizza.Pizza_name</span>
+          <span id="PizzaPrice">Rs.Coming Soon</span>
+          <span id="qty"><input id="pizzaQty"   type="number" name="quantity" value="" placeholder="0" /></span>
+           <span id="cart"><button>Add to Cart</button></span>
+       </div>
+          }
+</div>
